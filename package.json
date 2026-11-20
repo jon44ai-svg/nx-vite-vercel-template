@@ -1,0 +1,36 @@
+{
+  "name": "@nx-vite-vercel/source",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "dev": "nx dev @nx-vite-vercel/web",
+    "build": "nx build @nx-vite-vercel/web",
+    "test": "nx test @nx-vite-vercel/web",
+    "lint": "nx lint @nx-vite-vercel/web",
+    "typecheck": "nx typecheck @nx-vite-vercel/web"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@nx/devkit": "20.0.0",
+    "@nx/js": "20.0.0",
+    "@nx/vite": "20.0.0",
+    "@nx/web": "20.0.0",
+    "@nx/workspace": "20.0.0",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "nx": "22.7.10",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "packageManager": "bun@1.1.0"
+}
