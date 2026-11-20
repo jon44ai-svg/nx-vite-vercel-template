@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "types": ["node"],
+    "outDir": "../../dist/apps/api-nest"
+  },
+  "include": ["src/**/*.ts"]
+}
