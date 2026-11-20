@@ -1,0 +1,232 @@
+:root {
+  --ui-bg: #f8fafc;
+  --ui-surface: #ffffff;
+  --ui-surface-muted: #f1f5f9;
+  --ui-border: #e2e8f0;
+  --ui-text: #0f172a;
+  --ui-text-muted: #475569;
+  --ui-primary: #4f46e5;
+  --ui-primary-hover: #4338ca;
+  --ui-primary-text: #ffffff;
+  --ui-success-bg: #dcfce7;
+  --ui-success-text: #166534;
+  --ui-warn-bg: #fef3c7;
+  --ui-warn-text: #92400e;
+  --ui-neutral-bg: #e2e8f0;
+  --ui-neutral-text: #334155;
+  --ui-radius: 0.75rem;
+  --ui-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --ui-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ui-font);
+  background: var(--ui-bg);
+  color: var(--ui-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ui-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--ui-surface);
+  border-bottom: 1px solid var(--ui-border);
+  padding: 0.75rem 1rem;
+}
+
+.ui-header-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ui-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ui-text);
+}
+
+.ui-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ui-main {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 3rem;
+  flex: 1;
+}
+
+.ui-card {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  box-shadow: var(--ui-shadow);
+  padding: 1.25rem;
+}
+
+.ui-card-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.125rem;
+  font-weight: 650;
+}
+
+.ui-card-subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.925rem;
+  color: var(--ui-text-muted);
+}
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.55rem;
+  font-size: 0.925rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease;
+}
+
+.ui-btn-primary {
+  background: var(--ui-primary);
+  color: var(--ui-primary-text);
+}
+
+.ui-btn-primary:hover:not(:disabled) {
+  background: var(--ui-primary-hover);
+}
+
+.ui-btn-secondary {
+  background: var(--ui-surface);
+  color: var(--ui-text);
+  border-color: var(--ui-border);
+}
+
+.ui-btn-secondary:hover:not(:disabled) {
+  background: var(--ui-surface-muted);
+}
+
+.ui-btn-ghost {
+  background: transparent;
+  color: var(--ui-text-muted);
+}
+
+.ui-btn-ghost:hover:not(:disabled) {
+  background: var(--ui-surface-muted);
+  color: var(--ui-text);
+}
+
+.ui-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ui-badge-success {
+  background: var(--ui-success-bg);
+  color: var(--ui-success-text);
+}
+
+.ui-badge-warning {
+  background: var(--ui-warn-bg);
+  color: var(--ui-warn-text);
+}
+
+.ui-badge-neutral {
+  background: var(--ui-neutral-bg);
+  color: var(--ui-neutral-text);
+}
+
+.ui-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.ui-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.55rem;
+  border: 1px solid var(--ui-border);
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--ui-surface);
+  color: var(--ui-text);
+}
+
+.ui-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ui-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+}
+
+.ui-table th,
+.ui-table td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--ui-border);
+}
+
+@media (min-width: 720px) {
+  .ui-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ui-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ui-main {
+    padding: 2rem 1.5rem 3.5rem;
+  }
+}

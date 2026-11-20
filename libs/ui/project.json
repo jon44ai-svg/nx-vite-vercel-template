@@ -1,0 +1,20 @@
+{
+  "name": "@nx-vite-vercel/ui",
+  "projectType": "library",
+  "sourceRoot": "libs/ui/src",
+  "targets": {
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "storybook dev -p 6006"
+      }
+    },
+    "build-storybook": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/storybook"],
+      "options": {
+        "command": "storybook build -o dist/storybook"
+      }
+    }
+  }
+}
