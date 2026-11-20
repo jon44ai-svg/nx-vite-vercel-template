@@ -75,6 +75,22 @@ Thumbs.db
 # Nx local cache
 .nx/
 
+# Generated template feature manifest
+.template/
+
+# Storybook static output
+storybook-static/
+
+# Python virtual environments & caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local SQLite databases
+*.sqlite
+*.db
+
 # Bun lock file and local assets
 bun.lockb
 bun.lock

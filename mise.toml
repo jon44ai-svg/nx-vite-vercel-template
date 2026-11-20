@@ -1,0 +1,51 @@
+[tools]
+bun = "latest"
+node = "lts"
+python = "latest"
+uv = "latest"
+
+[tasks.setup]
+description = "Interactive startup CLI to enable/disable modular template features"
+run = "bun run setup"
+
+[tasks.lint]
+description = "Run oxlint across the workspace"
+run = "bun run lint"
+
+[tasks.format]
+description = "Format workspace files with oxfmt"
+run = "bun run format"
+
+[tasks.format-check]
+description = "Verify formatting with oxfmt"
+run = "bun run format:check"
+
+[tasks.test]
+description = "Run Vitest unit tests"
+run = "bun run test"
+
+[tasks.e2e]
+description = "Run Puppeteer browser smoke test"
+run = "bun run test:e2e"
+
+[tasks.storybook]
+description = "Launch Storybook for libs/ui"
+run = "bun run storybook"
+
+[tasks.build-storybook]
+description = "Build static Storybook site"
+run = "bun run build-storybook"
+
+[tasks.test-python]
+description = "Run Python FastAPI tests via uv"
+run = "uv run --directory apps/api-python pytest"
+
+[tasks.verify]
+description = "Run lint, format check, tests, React Doctor, and template freshness audit"
+run = [
+  "bun run lint",
+  "bun run format:check",
+  "bun run test",
+  "bun run doctor",
+  "bun run verify:template",
+]

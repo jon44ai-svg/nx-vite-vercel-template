@@ -10,7 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@nx-vite-vercel/shared-types": ["./libs/shared-types/src/index.ts"],
+      "@nx-vite-vercel/dal": ["./libs/dal/src/index.ts"],
+      "@nx-vite-vercel/ui": ["./libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "import", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "import/no-unassigned-import": "off",
+    "typescript/no-extraneous-class": ["warn", { "allowWithDecorator": true }],
+    "react/style-prop-object": ["warn", { "allow": ["StatusBar"] }],
+    "no-underscore-dangle": ["warn", { "allow": ["__TEMPLATE_FEATURES__"] }]
+  },
+  "ignorePatterns": [
+    "dist/**",
+    "storybook-static/**",
+    "node_modules/**",
+    ".nx/**",
+    ".codegraph/**",
+    ".venv/**",
+    "apps/api-python/.venv/**",
+    "coverage/**"
+  ]
+}

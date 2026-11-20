@@ -4,15 +4,24 @@
   "private": true,
   "license": "MIT",
   "workspaces": [
-    "apps/*",
-    "libs/*"
+    "libs/*",
+    "apps/web"
   ],
   "scripts": {
-    "dev": "nx dev @nx-vite-vercel/web",
-    "build": "nx build @nx-vite-vercel/web",
-    "test": "nx test @nx-vite-vercel/web",
-    "lint": "nx lint @nx-vite-vercel/web",
-    "typecheck": "nx typecheck @nx-vite-vercel/web"
+    "dev": "bun run --cwd apps/web vite",
+    "build": "bun run --cwd apps/web vite build",
+    "test": "vitest run",
+    "test:e2e": "bun tools/e2e/web-smoke.ts",
+    "test:all": "bun run test && bun run test:e2e",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "typecheck": "bunx tsc --noEmit -p apps/web/tsconfig.json",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o dist/storybook",
+    "doctor": "bunx react-doctor apps/web --no-supply-chain --no-score",
+    "verify:template": "bun tools/verify-template.ts",
+    "setup": "bun tools/template-cli/index.ts"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -24,17 +33,29 @@
     "@nx/vite": "24.0.6",
     "@nx/web": "24.0.6",
     "@nx/workspace": "24.0.6",
+    "@storybook/addon-docs": "^10.6.8",
+    "@storybook/react-vite": "^10.6.8",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/react": "^16.3.3",
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^31.0.1",
     "nx": "24.0.6",
+    "oxfmt": "^0.79.0",
+    "oxlint": "^1.94.0",
+    "puppeteer": "^25.18.1",
+    "storybook": "^10.6.8",
     "typescript": "^7.0.2",
     "typescript-classic": "npm:typescript@5.7.3",
-    "vite": "^8.3.8"
+    "vite": "^8.3.8",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.1.1"
   },
   "overrides": {
     "esbuild": "^0.25.0",
+    "glob": "^14.0.2",
     "minimatch": "^11.0.9"
   },
   "packageManager": "bun@1.1.0"
