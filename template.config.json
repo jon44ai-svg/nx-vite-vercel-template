@@ -1,0 +1,17 @@
+{
+  "$schema": "./tools/template-cli/template.config.schema.json",
+  "projectName": "nx-vite-vercel-template",
+  "defaultBackend": "nest",
+  "features": {
+    "web": true,
+    "pwa": true,
+    "tanstackStart": false,
+    "expo": false,
+    "storybook": true,
+    "apiNest": false,
+    "apiPython": false,
+    "auth": true,
+    "admin": true,
+    "docker": true
+  }
+}

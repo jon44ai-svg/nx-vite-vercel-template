@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Template Configuration",
+  "type": "object",
+  "required": ["projectName", "defaultBackend", "features"],
+  "properties": {
+    "projectName": { "type": "string" },
+    "defaultBackend": { "enum": ["none", "nest", "python"] },
+    "features": {
+      "type": "object",
+      "required": [
+        "web",
+        "pwa",
+        "tanstackStart",
+        "expo",
+        "storybook",
+        "apiNest",
+        "apiPython",
+        "auth",
+        "admin",
+        "docker"
+      ],
+      "properties": {
+        "web": { "type": "boolean" },
+        "pwa": { "type": "boolean" },
+        "tanstackStart": { "type": "boolean" },
+        "expo": { "type": "boolean" },
+        "storybook": { "type": "boolean" },
+        "apiNest": { "type": "boolean" },
+        "apiPython": { "type": "boolean" },
+        "auth": { "type": "boolean" },
+        "admin": { "type": "boolean" },
+        "docker": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  }
+}
