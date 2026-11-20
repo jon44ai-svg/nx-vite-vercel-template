@@ -1,0 +1,25 @@
+[project]
+name = "nx-vite-vercel-api-python"
+version = "0.2.0"
+requires-python = ">=3.11"
+dependencies = [
+  "bcrypt>=4.2,<6",
+  "fastapi>=0.115,<1",
+  "pydantic-settings>=2.7,<3",
+  "pyjwt>=2.10,<3",
+  "sqlalchemy>=2.0,<3",
+  "structlog>=25.1,<26",
+  "uvicorn[standard]>=0.34,<1",
+]
+
+[dependency-groups]
+dev = [
+  "httpx>=0.28,<1",
+  "pytest>=8.3,<10",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

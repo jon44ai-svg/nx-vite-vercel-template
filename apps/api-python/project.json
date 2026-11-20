@@ -1,0 +1,21 @@
+{
+  "name": "@nx-vite-vercel/api-python",
+  "projectType": "application",
+  "sourceRoot": "apps/api-python/app",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "uv run uvicorn app.main:app --reload --port 8000",
+        "cwd": "apps/api-python"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "uv run pytest",
+        "cwd": "apps/api-python"
+      }
+    }
+  }
+}
