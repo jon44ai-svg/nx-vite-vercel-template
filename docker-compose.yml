@@ -1,0 +1,44 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - '4200:80'
+    restart: unless-stopped
+
+  api-nest:
+    profiles: ['nest']
+    build:
+      context: .
+      dockerfile: apps/api-nest/Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      PORT: 3000
+      DATABASE_PATH: /data/api-nest.sqlite
+      CORS_ORIGIN: http://localhost:4200
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-at-least-32-chars}
+    volumes:
+      - nest_data:/data
+    restart: unless-stopped
+
+  api-python:
+    profiles: ['python']
+    build:
+      context: .
+      dockerfile: apps/api-python/Dockerfile
+    ports:
+      - '8000:8000'
+    environment:
+      APP_PORT: 8000
+      DATABASE_URL: sqlite:////data/api-python.sqlite
+      CORS_ORIGIN: http://localhost:4200
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-at-least-32-chars}
+    volumes:
+      - python_data:/data
+    restart: unless-stopped
+
+volumes:
+  nest_data:
+  python_data:
