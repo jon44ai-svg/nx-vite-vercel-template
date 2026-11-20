@@ -1,0 +1,22 @@
+{
+  "name": "@nx-vite-vercel/web-tanstack",
+  "projectType": "application",
+  "sourceRoot": "apps/web-tanstack/src",
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "bun run dev",
+        "cwd": "apps/web-tanstack"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/apps/web-tanstack/dist"],
+      "options": {
+        "command": "bun run build",
+        "cwd": "apps/web-tanstack"
+      }
+    }
+  }
+}

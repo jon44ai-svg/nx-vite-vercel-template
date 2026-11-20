@@ -1,0 +1,17 @@
+{
+  "name": "@nx-vite-vercel/mobile-expo",
+  "private": true,
+  "main": "expo/AppEntry",
+  "scripts": {
+    "start": "expo start",
+    "ios": "expo run:ios",
+    "android": "expo run:android",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "^58.0.26",
+    "expo-status-bar": "^58.0.5",
+    "react": "^19.0.0",
+    "react-native": "0.88.1"
+  }
+}
