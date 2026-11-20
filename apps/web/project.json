@@ -1,6 +1,13 @@
 {
   "name": "@nx-vite-vercel/web",
   "targets": {
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vitest run --config apps/web/vite.config.ts",
+        "cwd": "."
+      }
+    },
     "build": {
       "executor": "nx:run-commands",
       "outputs": ["{workspaceRoot}/dist/apps/web"],

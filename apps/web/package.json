@@ -1,0 +1,11 @@
+{
+  "name": "@nx-vite-vercel/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@nx-vite-vercel/dal": "workspace:*",
+    "@nx-vite-vercel/shared-types": "workspace:*",
+    "@nx-vite-vercel/ui": "workspace:*"
+  }
+}
