@@ -19,18 +19,23 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@nx/devkit": "20.0.0",
-    "@nx/js": "20.0.0",
-    "@nx/vite": "20.0.0",
-    "@nx/web": "20.0.0",
-    "@nx/workspace": "20.0.0",
+    "@nx/devkit": "24.0.6",
+    "@nx/js": "24.0.6",
+    "@nx/vite": "24.0.6",
+    "@nx/web": "24.0.6",
+    "@nx/workspace": "24.0.6",
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
-    "nx": "22.7.10",
+    "nx": "24.0.6",
     "typescript": "^7.0.2",
+    "typescript-classic": "npm:typescript@5.7.3",
     "vite": "^8.3.8"
+  },
+  "overrides": {
+    "esbuild": "^0.25.0",
+    "minimatch": "^11.0.9"
   },
   "packageManager": "bun@1.1.0"
 }
